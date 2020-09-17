@@ -20,7 +20,6 @@ public class Words {
             if (special.contains(sentence.charAt(i))) newsentence.append(" ");
             else newsentence.append(sentence.charAt(i));
         }
-        //sentence = sentence.replace(",", " ");
 
         String[] sentences = newsentence.toString().split(" ",0);
         System.out.println(sentences.length);
