@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Words {
     public static void main(String[] args) {
@@ -6,8 +9,20 @@ public class Words {
         System.out.println("Please enter a sentence :");
         String sentence = sc.nextLine();
         sentence = sentence.trim();
-        sentence = sentence.replace(",", " ");
-        String[] sentences = sentence.split(" ",0);
+        Set<Character> special = new HashSet<>();
+        special.add('#');special.add('$');special.add('&');special.add('*');special.add('?');special.add('!');
+        special.add('@');special.add('%');special.add('^');special.add('(');special.add(')');special.add('[');
+        special.add(']');special.add('{');special.add('}');special.add(',');special.add('.');special.add('\\');
+        special.add('|');special.add('`');special.add('~');special.add('<');special.add('>');special.add('/');
+        special.add('=');special.add('+');
+        StringBuilder newsentence = new StringBuilder();
+        for (int i = 0 ; i < sentence.length();i++){
+            if (special.contains(sentence.charAt(i))) newsentence.append(" ");
+            else newsentence.append(sentence.charAt(i));
+        }
+        //sentence = sentence.replace(",", " ");
+
+        String[] sentences = newsentence.toString().split(" ",0);
         System.out.println(sentences.length);
         int num = 0;
         for (String s : sentences){
