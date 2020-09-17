@@ -11,7 +11,7 @@ public class Palindrome {
         if (len !=0) {
             for (int i = 0; i < len; i++) {
                 char c = sentence.charAt(i);
-                if (Character.isLetter(c))rev.append(Character.toLowerCase(c));
+                if (Character.isLetter(c)||Character.isDigit(c))rev.append(Character.toLowerCase(c));
             }
         }
         String s = rev.toString();
