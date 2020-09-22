@@ -3,11 +3,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Consonants {
+    private static int cnt = 0;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter a sentence :");
         String sentence = sc.nextLine();
-        int cnt = 0;
+        String res = jisuan(sentence);
+        System.out.println("The number of consonants is : "+cnt);
+        System.out.println("The replaced string is : ");
+        System.out.println(res);
+    }
+    public static String jisuan(String s){
         List<Character> cons = new ArrayList<>();
         cons.add('b');cons.add('m');cons.add('c');cons.add('d');cons.add('f');cons.add('g');cons.add('h');cons.add('j');cons.add('k');cons.add('l');
         cons.add('n');cons.add('p');cons.add('q');cons.add('r');cons.add('s');cons.add('t');cons.add('v');cons.add('w');cons.add('x');cons.add('y');
@@ -15,10 +21,10 @@ public class Consonants {
         cons.add('M');cons.add('N');cons.add('P');cons.add('Q');cons.add('R');cons.add('S');cons.add('T');cons.add('V');cons.add('W');cons.add('X');
         cons.add('Y');cons.add('Z');
         StringBuilder res = new StringBuilder();
-        int len = sentence.length();
+        int len = s.length();
         if (len!=0) {
             for (int i = 0; i < len; i++) {
-                char c = sentence.charAt(i);
+                char c = s.charAt(i);
                 if (cons.contains(c)){
                     res.append("*");
                     cnt += 1;
@@ -26,8 +32,6 @@ public class Consonants {
                 else res.append(c);
             }
         }
-        System.out.println("The number of consonants is : "+cnt);
-        System.out.println("The replaced string is : ");
-        System.out.println(res.toString());
+        return res.toString();
     }
 }
