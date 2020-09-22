@@ -28,7 +28,7 @@ public class Words {
         }
 
         String[] sentences = newsentence.toString().split(" ",0);
-        System.out.println(sentences.length);
+        //System.out.println(sentences.length);
         int num = 0;
         for (String sen : sentences){
             if (!sen.equals("")) num += 1;
