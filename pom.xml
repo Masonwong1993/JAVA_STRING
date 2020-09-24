@@ -30,7 +30,7 @@
                             <classpathPrefix>
                                 lib/
                             </classpathPrefix>
-                            <mainClass>com.huajun.Main</mainClass>
+                            <mainClass>Vowels</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
